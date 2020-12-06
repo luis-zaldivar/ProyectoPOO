@@ -28,20 +28,43 @@ public class Pincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        Reg = new javax.swing.JButton();
+        Cons = new javax.swing.JButton();
+        UpData = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Registro");
+        Reg.setText("Registro");
+        Reg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Consulta");
+        Cons.setText("Consulta");
+        Cons.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Actualizacion");
+        UpData.setText("Actualizacion");
+        UpData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpDataActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Inicio");
+
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,15 +73,18 @@ public class Pincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(29, 29, 29)
-                        .addComponent(jButton3))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(174, 174, 174)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(Reg)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Salir)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Cons)
+                                .addGap(29, 29, 29)
+                                .addComponent(UpData)))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -68,14 +94,38 @@ public class Pincipal extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addGap(88, 88, 88))
+                    .addComponent(Reg)
+                    .addComponent(Cons)
+                    .addComponent(UpData))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Salir)
+                .addGap(44, 44, 44))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegActionPerformed
+        Registros Regi=new Registros();
+        Regi.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_RegActionPerformed
+
+    private void ConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsActionPerformed
+        Consultas Consu=new Consultas();
+        Consu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_ConsActionPerformed
+
+    private void UpDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpDataActionPerformed
+        Actualizaciones UpData=new Actualizaciones();
+        UpData.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_UpDataActionPerformed
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,9 +163,10 @@ public class Pincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton Cons;
+    private javax.swing.JButton Reg;
+    private javax.swing.JButton Salir;
+    private javax.swing.JButton UpData;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

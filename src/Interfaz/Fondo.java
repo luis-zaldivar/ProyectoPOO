@@ -10,6 +10,7 @@ import java.awt.Image;
 import static java.lang.reflect.Array.set;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -21,16 +22,17 @@ public class Fondo extends javax.swing.JFrame {
     /**
      * Creates new form Fondo
      */
-    fondoPanel fondo=new fondoPanel(); 
+    fondoPanel fondo = new fondoPanel();
+
     public Fondo() {
         this.setContentPane(fondo);//instruccion para llamar al metodo para que el fondo sea de una imagen 
-         
+
         initComponents();
         this.setLocationRelativeTo(null);//hace que la ventana se coloque en el centro
         //inicio de codigo para mostrar imagen en un JLabel
-        ImageIcon ima1=new ImageIcon(getClass().getResource("/imagenes/logo.jpeg")); 
-        Icon fondo1 =new ImageIcon(ima1.getImage().getScaledInstance(Image1.getWidth(), Image1.getHeight(), Image.SCALE_DEFAULT));
-        Image1.setIcon(fondo1);
+        ImageIcon ima1 = new ImageIcon(getClass().getResource("/imagenes/logo.jpeg"));//obtiene la imagen de una ruta
+        //Icon fondo1 =new ImageIcon(ima1.getImage().getScaledInstance(Image1.getWidth(), Image1.getHeight(), Image.SCALE_DEFAULT));
+        //Image1.setIcon(fondo1);
         this.repaint();
     }
 
@@ -44,24 +46,16 @@ public class Fondo extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu1 = new javax.swing.JMenu();
-        miniFondo = new fondoPanel1();
         jButton1 = new javax.swing.JButton();
-        Image1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        User = new javax.swing.JTextField();
+        Contra = new javax.swing.JPasswordField();
+        Salir = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout miniFondoLayout = new javax.swing.GroupLayout(miniFondo);
-        miniFondo.setLayout(miniFondoLayout);
-        miniFondoLayout.setHorizontalGroup(
-            miniFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
-        );
-        miniFondoLayout.setVerticalGroup(
-            miniFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 48, Short.MAX_VALUE)
-        );
 
         jButton1.setText("Iniciar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -70,43 +64,97 @@ public class Fondo extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Usuario:");
+
+        jLabel2.setText("Contraseña:");
+
+        User.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UserActionPerformed(evt);
+            }
+        });
+        this.setLocale(null);
+
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(Image1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
-                    .addComponent(miniFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(334, Short.MAX_VALUE))
+                .addGap(244, 244, 244)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Contra, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Salir))
+                .addGap(278, 278, 278))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(miniFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(Image1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(113, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(140, 140, 140))))
+                        .addGap(88, 88, 88)
+                        .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63)
+                        .addComponent(Contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(jLabel1)
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel2)))
+                .addGap(84, 84, 84)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Salir))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Pincipal Inicio=new Pincipal();
-        Inicio.setVisible(true);
-        this.setVisible(false);
+        String Usuario = "root", Contrasena = "root", ComPas = "";//variables para guardar usuario contraseña 
+        char[] pas = Contra.getPassword();//arreglo para guardar la contraseña 
+        for (int x = 0; x < pas.length; x++) {//for para recorrer el arreglo
+            ComPas += pas[x];//concatena el arreglo para formar la contraseña 
+        }
+        if (User.getText().equals(Usuario)) {//compara lo que se ecribe en la interfas con el usuario
+            if (ComPas.equals(Contrasena)) {//compara las contraseña ingresado con la que esta registrada
+                Pincipal Inicio = new Pincipal();//instacia de la interfas principal
+                Inicio.setVisible(true);//se muestra en pamtalla la pantalla principal 
+                this.setVisible(false);//se oculta esta 
+            } else {//en el caso de que la contraseña se incorrecta
+                
+                JOptionPane.showMessageDialog(null, "Contraseña incorrecta");//se muestra una ventana si la contraseña no es correcta
+                Contra.setText("");
+            }
+        } else {//en el caso de que el usuario sea incorrecto 
+            JOptionPane.showMessageDialog(null, "Usuario incorrecta");//muestra una ventana con el mensaje de que el usuario es incorrecto
+            User.setText("");
+        }
+        
+
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UserActionPerformed
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,25 +192,33 @@ public class Fondo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Image1;
+    private javax.swing.JPasswordField Contra;
+    private javax.swing.JButton Salir;
+    private javax.swing.JTextField User;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JPanel miniFondo;
     // End of variables declaration//GEN-END:variables
-    class fondoPanel extends JPanel{
+    class fondoPanel extends JPanel {
+
         private Image imagen;
-        public void paint(Graphics g){
-            imagen=new ImageIcon(getClass().getResource("/imagenes/fon.jpg")).getImage();
+
+        public void paint(Graphics g) {
+            imagen = new ImageIcon(getClass().getResource("/imagenes/Propu2.png")).getImage();
             g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
             setOpaque(false);
             super.paint(g);
         }
     }
+
     //clase para poner un fondo en un JPanel
-    class fondoPanel1 extends JPanel{
+    class fondoPanel1 extends JPanel {
+
         private Image imagen;
-        public void paint(Graphics g){
-            imagen=new ImageIcon(getClass().getResource("/imagenes/logo.jpeg")).getImage();
+
+        public void paint(Graphics g) {
+            imagen = new ImageIcon(getClass().getResource("/imagenes/logo.jpeg")).getImage();
             g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
             setOpaque(false);
             super.paint(g);
@@ -170,4 +226,3 @@ public class Fondo extends javax.swing.JFrame {
     }
 
 }
-
