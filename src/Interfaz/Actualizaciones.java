@@ -5,6 +5,12 @@
  */
 package Interfaz;
 
+import Interfaz.Pincipal.fondoPanel;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author luise
@@ -14,9 +20,18 @@ public class Actualizaciones extends javax.swing.JFrame {
     /**
      * Creates new form Actualizaciones
      */
+    fondoPanel fondo = new fondoPanel();
     public Actualizaciones() {
+        this.setContentPane(fondo);
         initComponents();
         this.setLocationRelativeTo(null);
+        /*
+        int[] datos=new int[100];
+        for (int i=0;i<100;i++){
+            String n=String.valueOf(i);
+            Mos.append(n+"\n");
+        }para mostrar un arreglo que se usara despues xD
+        */
     }
 
     /**
@@ -28,12 +43,13 @@ public class Actualizaciones extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         Inicio = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Mos = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("UpData");
+        setTitle("Actualizacion");
+        setResizable(false);
 
         Inicio.setText("Inicio");
         Inicio.addActionListener(new java.awt.event.ActionListener() {
@@ -42,35 +58,39 @@ public class Actualizaciones extends javax.swing.JFrame {
             }
         });
 
+        Mos.setColumns(20);
+        Mos.setRows(5);
+        jScrollPane1.setViewportView(Mos);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addComponent(jLabel1)
-                .addContainerGap(208, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Inicio)
-                .addGap(22, 22, 22))
+                .addGap(317, 317, 317)
+                .addComponent(Inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(313, 313, 313))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(Inicio)
-                .addGap(17, 17, 17))
+                .addGap(15, 15, 15))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
-        Pincipal Inicio=new Pincipal();
-        Inicio.setVisible(true);
+        Pincipal inicio=new Pincipal();
+        inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_InicioActionPerformed
 
@@ -111,6 +131,18 @@ public class Actualizaciones extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Inicio;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextArea Mos;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+    class fondoPanel extends JPanel {
+
+        private Image imagen;
+
+        public void paint(Graphics g) {
+            imagen = new ImageIcon(getClass().getResource("/imagenes/fondo 2.jpeg")).getImage();
+            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+            setOpaque(false);
+            super.paint(g);
+        }
+    }
 }

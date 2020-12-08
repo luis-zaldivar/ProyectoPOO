@@ -5,16 +5,24 @@
  */
 package Interfaz;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author luise
  */
-public class Pincipal extends javax.swing.JFrame {
 
+public class Pincipal extends javax.swing.JFrame {
+    
     /**
      * Creates new form Pincipal
      */
+    fondoPanel fondo = new fondoPanel();
     public Pincipal() {
+        this.setContentPane(fondo);
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -31,10 +39,13 @@ public class Pincipal extends javax.swing.JFrame {
         Reg = new javax.swing.JButton();
         Cons = new javax.swing.JButton();
         UpData = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Inicio");
+        setMaximumSize(new java.awt.Dimension(700, 400));
+        setPreferredSize(new java.awt.Dimension(700, 400));
+        setResizable(false);
 
         Reg.setText("Registro");
         Reg.addActionListener(new java.awt.event.ActionListener() {
@@ -57,8 +68,6 @@ public class Pincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Inicio");
-
         Salir.setText("Salir");
         Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,35 +80,29 @@ public class Pincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Reg, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(175, 175, 175)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(Reg)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Salir)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Cons)
-                                .addGap(29, 29, 29)
-                                .addComponent(UpData)))))
-                .addContainerGap(27, Short.MAX_VALUE))
+                    .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cons, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                .addComponent(UpData)
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Cons)
+                .addGap(106, 106, 106))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 236, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Reg)
-                    .addComponent(Cons)
                     .addComponent(UpData))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Salir)
-                .addGap(44, 44, 44))
+                .addGap(100, 100, 100)
+                .addComponent(Salir))
         );
 
         pack();
@@ -167,6 +170,16 @@ public class Pincipal extends javax.swing.JFrame {
     private javax.swing.JButton Reg;
     private javax.swing.JButton Salir;
     private javax.swing.JButton UpData;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+    class fondoPanel extends JPanel {
+
+        private Image imagen;
+
+        public void paint(Graphics g) {
+            imagen = new ImageIcon(getClass().getResource("/imagenes/fondo 2.jpeg")).getImage();
+            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+            setOpaque(false);
+            super.paint(g);
+        }
+    }
 }

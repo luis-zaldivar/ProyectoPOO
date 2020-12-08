@@ -5,6 +5,11 @@
  */
 package Interfaz;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author luise
@@ -14,7 +19,9 @@ public class Consultas extends javax.swing.JFrame {
     /**
      * Creates new form Consultas
      */
+    fondoPanel fondo = new fondoPanel();
     public Consultas() {
+        this.setContentPane(fondo);
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -28,12 +35,10 @@ public class Consultas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         Inicio = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("cons");
+        setTitle("Consultas");
 
         Inicio.setText("Inicio");
         Inicio.addActionListener(new java.awt.event.ActionListener() {
@@ -47,30 +52,24 @@ public class Consultas extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(161, 161, 161)
-                .addComponent(jLabel1)
-                .addContainerGap(211, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Inicio)
-                .addGap(18, 18, 18))
+                .addGap(321, 321, 321)
+                .addComponent(Inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(309, 309, 309))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 216, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(314, Short.MAX_VALUE)
                 .addComponent(Inicio)
-                .addGap(16, 16, 16))
+                .addGap(19, 19, 19))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
-        Pincipal Inicio=new Pincipal();
-        Inicio.setVisible(true);
+        Pincipal inicio=new Pincipal();
+        inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_InicioActionPerformed
 
@@ -111,6 +110,16 @@ public class Consultas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Inicio;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+    class fondoPanel extends JPanel {
+
+        private Image imagen;
+
+        public void paint(Graphics g) {
+            imagen = new ImageIcon(getClass().getResource("/imagenes/fondo 2.jpeg")).getImage();
+            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+            setOpaque(false);
+            super.paint(g);
+        }
+    }
 }

@@ -30,10 +30,11 @@ public class Fondo extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);//hace que la ventana se coloque en el centro
         //inicio de codigo para mostrar imagen en un JLabel
-        ImageIcon ima1 = new ImageIcon(getClass().getResource("/imagenes/logo.jpeg"));//obtiene la imagen de una ruta
+        //ImageIcon ima1 = new ImageIcon(getClass().getResource("/imagenes/logo.jpeg"));//obtiene la imagen de una ruta
         //Icon fondo1 =new ImageIcon(ima1.getImage().getScaledInstance(Image1.getWidth(), Image1.getHeight(), Image.SCALE_DEFAULT));
         //Image1.setIcon(fondo1);
         this.repaint();
+       
     }
 
     /**
@@ -49,13 +50,19 @@ public class Fondo extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        User = new javax.swing.JTextField();
         Contra = new javax.swing.JPasswordField();
         Salir = new javax.swing.JButton();
+        User = new javax.swing.JTextField();
 
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registro");
+        setForeground(java.awt.Color.darkGray);
+        setMaximumSize(new java.awt.Dimension(700, 400));
+        setName("Registro"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(700, 400));
+        setResizable(false);
 
         jButton1.setText("Iniciar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -64,61 +71,77 @@ public class Fondo extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setText("Usuario:");
+        jLabel1.setToolTipText("");
+        jLabel1.setMaximumSize(new java.awt.Dimension(47, 20));
+        jLabel1.setMinimumSize(new java.awt.Dimension(47, 20));
+        jLabel1.setPreferredSize(new java.awt.Dimension(47, 20));
 
+        jLabel2.setFont(new java.awt.Font("Calibri Light", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Contraseña:");
+        jLabel2.setMaximumSize(new java.awt.Dimension(47, 20));
+        jLabel2.setMinimumSize(new java.awt.Dimension(47, 20));
+        jLabel2.setPreferredSize(new java.awt.Dimension(47, 20));
 
-        User.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UserActionPerformed(evt);
-            }
-        });
-        this.setLocale(null);
+        Contra.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Contra.setMinimumSize(new java.awt.Dimension(50, 18));
+        Contra.setPreferredSize(new java.awt.Dimension(50, 18));
 
         Salir.setText("Salir");
+        Salir.setMaximumSize(new java.awt.Dimension(65, 32));
+        Salir.setMinimumSize(new java.awt.Dimension(65, 32));
+        Salir.setPreferredSize(new java.awt.Dimension(65, 32));
         Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalirActionPerformed(evt);
             }
         });
 
+        User.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        User.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(244, 244, 244)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Contra, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Salir))
-                .addGap(278, 278, 278))
+                .addGap(143, 143, 143)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
+                .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(184, 184, 184))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Contra, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(User, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(63, 63, 63)
-                        .addComponent(Contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(jLabel1)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel2)))
-                .addGap(84, 84, 84)
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(User, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Contra, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Salir))
-                .addContainerGap())
+                    .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60))
         );
 
         pack();
@@ -147,10 +170,6 @@ public class Fondo extends javax.swing.JFrame {
         
 
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UserActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
        System.exit(0);
@@ -205,7 +224,7 @@ public class Fondo extends javax.swing.JFrame {
         private Image imagen;
 
         public void paint(Graphics g) {
-            imagen = new ImageIcon(getClass().getResource("/imagenes/Propu2.png")).getImage();
+            imagen = new ImageIcon(getClass().getResource("/imagenes/fondo 2.jpeg")).getImage();
             g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
             setOpaque(false);
             super.paint(g);
@@ -213,16 +232,6 @@ public class Fondo extends javax.swing.JFrame {
     }
 
     //clase para poner un fondo en un JPanel
-    class fondoPanel1 extends JPanel {
-
-        private Image imagen;
-
-        public void paint(Graphics g) {
-            imagen = new ImageIcon(getClass().getResource("/imagenes/logo.jpeg")).getImage();
-            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
-            setOpaque(false);
-            super.paint(g);
-        }
-    }
+    
 
 }

@@ -5,6 +5,11 @@
  */
 package Interfaz;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author luise
@@ -14,7 +19,9 @@ public class Registros extends javax.swing.JFrame {
     /**
      * Creates new form Registros
      */
+    fondoPanel fondo = new fondoPanel();
     public Registros() {
+        this.setContentPane(fondo);
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -28,17 +35,39 @@ public class Registros extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         Inicio = new javax.swing.JButton();
+        GComercial = new javax.swing.JButton();
+        GTi = new javax.swing.JButton();
+        GLogistica = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registro");
 
-        jLabel1.setText("Reg");
-
-        Inicio.setText("Inicio");
+        Inicio.setText("inicio");
         Inicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InicioActionPerformed(evt);
+            }
+        });
+
+        GComercial.setText("Gerente Comercial");
+        GComercial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GComercialActionPerformed(evt);
+            }
+        });
+
+        GTi.setText("Gerente de TI");
+        GTi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GTiActionPerformed(evt);
+            }
+        });
+
+        GLogistica.setText("Gerente de Logística");
+        GLogistica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GLogisticaActionPerformed(evt);
             }
         });
 
@@ -47,32 +76,55 @@ public class Registros extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(146, 146, 146)
-                .addComponent(jLabel1)
-                .addContainerGap(232, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Inicio)
+                .addGap(25, 25, 25)
+                .addComponent(GComercial)
+                .addGap(142, 142, 142)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(GLogistica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addComponent(GTi)
                 .addGap(29, 29, 29))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GComercial)
+                    .addComponent(GLogistica)
+                    .addComponent(GTi))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 252, Short.MAX_VALUE)
                 .addComponent(Inicio)
-                .addGap(15, 15, 15))
+                .addGap(25, 25, 25))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
-        Pincipal Inicio=new Pincipal();
-        Inicio.setVisible(true);
+        Pincipal inicio=new Pincipal();
+        inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_InicioActionPerformed
+
+    private void GLogisticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GLogisticaActionPerformed
+        RegGeLog ReLog=new RegGeLog();
+        ReLog.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_GLogisticaActionPerformed
+
+    private void GComercialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GComercialActionPerformed
+        RegGeCom ReCom=new RegGeCom();
+        ReCom.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_GComercialActionPerformed
+
+    private void GTiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GTiActionPerformed
+        RegGeTi ReTi=new RegGeTi();
+        ReTi.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_GTiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,7 +162,20 @@ public class Registros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton GComercial;
+    private javax.swing.JButton GLogistica;
+    private javax.swing.JButton GTi;
     private javax.swing.JButton Inicio;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+    class fondoPanel extends JPanel {
+
+        private Image imagen;
+
+        public void paint(Graphics g) {
+            imagen = new ImageIcon(getClass().getResource("/imagenes/fondo 2.jpeg")).getImage();
+            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+            setOpaque(false);
+            super.paint(g);
+        }
+    }
 }
