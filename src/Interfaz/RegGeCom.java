@@ -46,8 +46,10 @@ public class RegGeCom extends javax.swing.JFrame {
         Corre = new javax.swing.JTextField();
         Curp = new javax.swing.JTextField();
         Registrar = new javax.swing.JButton();
+        Reg = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         Inicio.setText("Inicio");
         Inicio.addActionListener(new java.awt.event.ActionListener() {
@@ -77,6 +79,13 @@ public class RegGeCom extends javax.swing.JFrame {
         jLabel5.setText("Nombre:");
 
         Registrar.setText("Registrar");
+
+        Reg.setText("Registros");
+        Reg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,7 +119,9 @@ public class RegGeCom extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Registrar)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Reg)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Inicio)
                 .addGap(49, 49, 49))
         );
@@ -138,7 +149,8 @@ public class RegGeCom extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Inicio)
-                    .addComponent(Registrar))
+                    .addComponent(Registrar)
+                    .addComponent(Reg))
                 .addGap(15, 15, 15))
         );
 
@@ -150,6 +162,12 @@ public class RegGeCom extends javax.swing.JFrame {
        inicio.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_InicioActionPerformed
+
+    private void RegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegActionPerformed
+        Registros re=new Registros();
+        re.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_RegActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,6 +209,7 @@ public class RegGeCom extends javax.swing.JFrame {
     private javax.swing.JTextField Curp;
     private javax.swing.JButton Inicio;
     private javax.swing.JTextField Nom;
+    private javax.swing.JButton Reg;
     private javax.swing.JButton Registrar;
     private javax.swing.JTextField Tel;
     private javax.swing.JLabel jLabel1;

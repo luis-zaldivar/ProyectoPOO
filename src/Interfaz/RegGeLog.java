@@ -46,8 +46,10 @@ public class RegGeLog extends javax.swing.JFrame {
         Experiencia = new javax.swing.JTextField();
         Inicio = new javax.swing.JButton();
         Registrar = new javax.swing.JButton();
+        rec = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -78,6 +80,13 @@ public class RegGeLog extends javax.swing.JFrame {
 
         Registrar.setText("Registrar");
 
+        rec.setText("Registros");
+        rec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,7 +113,9 @@ public class RegGeLog extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Registrar)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rec)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Inicio)
                 .addGap(28, 28, 28))
         );
@@ -132,7 +143,8 @@ public class RegGeLog extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Inicio)
-                    .addComponent(Registrar))
+                    .addComponent(Registrar)
+                    .addComponent(rec))
                 .addGap(15, 15, 15))
         );
 
@@ -144,6 +156,12 @@ public class RegGeLog extends javax.swing.JFrame {
        inicio.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_InicioActionPerformed
+
+    private void recActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recActionPerformed
+        Registros re=new Registros();
+        re.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_recActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,6 +209,7 @@ public class RegGeLog extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton rec;
     private javax.swing.JTextField tel;
     // End of variables declaration//GEN-END:variables
     class fondoPanel extends JPanel {

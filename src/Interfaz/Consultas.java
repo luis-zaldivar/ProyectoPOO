@@ -36,6 +36,10 @@ public class Consultas extends javax.swing.JFrame {
     private void initComponents() {
 
         Inicio = new javax.swing.JButton();
+        GeCome = new javax.swing.JButton();
+        GeLog = new javax.swing.JButton();
+        GeTi = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Consultas");
@@ -47,6 +51,31 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
 
+        GeCome.setText("Gerente Comercial");
+        GeCome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GeComeActionPerformed(evt);
+            }
+        });
+
+        GeLog.setText("Gerente de Logística");
+        GeLog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GeLogActionPerformed(evt);
+            }
+        });
+
+        GeTi.setText("Gerente de TI");
+        GeTi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GeTiActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("¿Que desea consultar?");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -55,11 +84,30 @@ public class Consultas extends javax.swing.JFrame {
                 .addGap(321, 321, 321)
                 .addComponent(Inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(309, 309, 309))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(GeCome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(GeLog)
+                .addGap(124, 124, 124)
+                .addComponent(GeTi)
+                .addGap(32, 32, 32))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(245, 245, 245))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(314, Short.MAX_VALUE)
+                .addGap(12, 12, 12)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(GeLog)
+                    .addComponent(GeCome)
+                    .addComponent(GeTi))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
                 .addComponent(Inicio)
                 .addGap(19, 19, 19))
         );
@@ -72,6 +120,24 @@ public class Consultas extends javax.swing.JFrame {
         inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_InicioActionPerformed
+
+    private void GeComeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeComeActionPerformed
+        ConGeCom GeCom=new ConGeCom();
+        GeCom.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_GeComeActionPerformed
+
+    private void GeLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeLogActionPerformed
+        ConGeLog GeLog=new ConGeLog();
+        GeLog.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_GeLogActionPerformed
+
+    private void GeTiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeTiActionPerformed
+        ConGeTi GeTi=new ConGeTi();
+        GeTi.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_GeTiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,7 +175,11 @@ public class Consultas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton GeCome;
+    private javax.swing.JButton GeLog;
+    private javax.swing.JButton GeTi;
     private javax.swing.JButton Inicio;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
     class fondoPanel extends JPanel {
 

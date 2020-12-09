@@ -5,6 +5,7 @@
  */
 package Interfaz;
 
+import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -14,13 +15,13 @@ import javax.swing.JPanel;
  *
  * @author luise
  */
-public class RegGeTi extends javax.swing.JFrame {
+public class ActuGeCom extends javax.swing.JFrame {
 
     /**
-     * Creates new form RegGeTi
+     * Creates new form ActuGeCom
      */
     fondoPanel fondo = new fondoPanel();
-    public RegGeTi() {
+    public ActuGeCom() {
         this.setContentPane(fondo);
         initComponents();
         this.setLocationRelativeTo(null);
@@ -40,24 +41,24 @@ public class RegGeTi extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        Nom = new javax.swing.JTextField();
-        Tel = new javax.swing.JTextField();
-        Corr = new javax.swing.JTextField();
-        Certificaciones = new javax.swing.JTextField();
+        BusName = new javax.swing.JTextField();
+        Num = new javax.swing.JTextField();
+        Correo = new javax.swing.JTextField();
+        Curp = new javax.swing.JTextField();
         Inicio = new javax.swing.JButton();
-        Registrar = new javax.swing.JButton();
-        Registro = new javax.swing.JButton();
+        Guardar = new javax.swing.JButton();
+        Actu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Gerencia de TI");
+        jLabel1.setText("Gerencia de Comunicaciones");
 
         jLabel2.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre:");
+        jLabel2.setText("Inserte el nombre del empleado al que desea modificar los datos");
 
         jLabel3.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -65,11 +66,17 @@ public class RegGeTi extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Correo:");
+        jLabel4.setText("Corre:");
 
         jLabel5.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Certificaciones");
+        jLabel5.setText("CURP");
+
+        Curp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CurpActionPerformed(evt);
+            }
+        });
 
         Inicio.setText("Inicio");
         Inicio.addActionListener(new java.awt.event.ActionListener() {
@@ -78,12 +85,12 @@ public class RegGeTi extends javax.swing.JFrame {
             }
         });
 
-        Registrar.setText("Registrar");
+        Guardar.setText("Guardar");
 
-        Registro.setText("Registros");
-        Registro.addActionListener(new java.awt.event.ActionListener() {
+        Actu.setText("Actualizaciones");
+        Actu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroActionPerformed(evt);
+                ActuActionPerformed(evt);
             }
         });
 
@@ -92,76 +99,85 @@ public class RegGeTi extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(301, 301, 301)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(95, 95, 95)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Nom)
-                            .addComponent(Tel)
-                            .addComponent(Corr)
-                            .addComponent(Certificaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE))))
-                .addContainerGap(160, Short.MAX_VALUE))
+                            .addComponent(Num)
+                            .addComponent(Correo)
+                            .addComponent(Curp, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BusName, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Registrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Registro)
-                .addGap(21, 21, 21)
-                .addComponent(Inicio)
-                .addGap(29, 29, 29))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(201, 201, 201))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Guardar)
+                        .addGap(18, 18, 18)
+                        .addComponent(Actu)
+                        .addGap(20, 20, 20)
+                        .addComponent(Inicio)
+                        .addGap(69, 69, 69))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(27, 27, 27)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(Nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                    .addComponent(BusName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(Tel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Num, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(Corr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                    .addComponent(Correo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(Certificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                    .addComponent(Curp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Inicio)
-                    .addComponent(Registrar)
-                    .addComponent(Registro))
-                .addGap(23, 23, 23))
+                    .addComponent(Guardar)
+                    .addComponent(Actu))
+                .addGap(24, 24, 24))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void CurpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CurpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CurpActionPerformed
+
     private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
-        Pincipal Inicio=new Pincipal();
-        Inicio.setVisible(true);
+        Pincipal inicio=new Pincipal();
+        inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_InicioActionPerformed
 
-    private void RegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroActionPerformed
-        Registros re=new Registros();
-        re.setVisible(true);
+    private void ActuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActuActionPerformed
+        Actualizaciones act=new Actualizaciones();
+        act.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_RegistroActionPerformed
+    }//GEN-LAST:event_ActuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,32 +196,32 @@ public class RegGeTi extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegGeTi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ActuGeCom.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegGeTi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ActuGeCom.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegGeTi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ActuGeCom.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegGeTi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ActuGeCom.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegGeTi().setVisible(true);
+                new ActuGeCom().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Certificaciones;
-    private javax.swing.JTextField Corr;
+    private javax.swing.JButton Actu;
+    private javax.swing.JTextField BusName;
+    private javax.swing.JTextField Correo;
+    private javax.swing.JTextField Curp;
+    private javax.swing.JButton Guardar;
     private javax.swing.JButton Inicio;
-    private javax.swing.JTextField Nom;
-    private javax.swing.JButton Registrar;
-    private javax.swing.JButton Registro;
-    private javax.swing.JTextField Tel;
+    private javax.swing.JTextField Num;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -224,4 +240,3 @@ public class RegGeTi extends javax.swing.JFrame {
         }
     }
 }
-

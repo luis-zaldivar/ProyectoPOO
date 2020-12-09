@@ -3,6 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -51,7 +52,9 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="Registrar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="rec" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="Inicio" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
           </Group>
@@ -86,6 +89,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Inicio" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Registrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rec" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
           </Group>
@@ -168,6 +172,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Registrar"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="rec">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registros"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="recActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

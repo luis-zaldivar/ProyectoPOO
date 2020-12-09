@@ -6,6 +6,7 @@
 package Interfaz;
 
 import Interfaz.Pincipal.fondoPanel;
+import com.sun.prism.paint.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -30,7 +31,7 @@ public class Actualizaciones extends javax.swing.JFrame {
         for (int i=0;i<100;i++){
             String n=String.valueOf(i);
             Mos.append(n+"\n");
-        }para mostrar un arreglo que se usara despues xD
+        }//para mostrar un arreglo que se usara despues xD
         */
     }
 
@@ -44,8 +45,10 @@ public class Actualizaciones extends javax.swing.JFrame {
     private void initComponents() {
 
         Inicio = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Mos = new javax.swing.JTextArea();
+        GeCome = new javax.swing.JButton();
+        Geti = new javax.swing.JButton();
+        GeLog = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Actualizacion");
@@ -58,9 +61,30 @@ public class Actualizaciones extends javax.swing.JFrame {
             }
         });
 
-        Mos.setColumns(20);
-        Mos.setRows(5);
-        jScrollPane1.setViewportView(Mos);
+        GeCome.setText("Gerente Comercial");
+        GeCome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GeComeActionPerformed(evt);
+            }
+        });
+
+        Geti.setText("Gerente de TI");
+        Geti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GetiActionPerformed(evt);
+            }
+        });
+
+        GeLog.setText("Gerente de Logística");
+        GeLog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GeLogActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("¿Que desea Actualizar?");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,16 +95,30 @@ public class Actualizaciones extends javax.swing.JFrame {
                 .addComponent(Inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(313, 313, 313))
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(GeCome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Geti)
+                .addGap(15, 15, 15))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(GeLog))
+                .addGap(244, 244, 244))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(GeLog)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Geti)
+                    .addComponent(GeCome))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
                 .addComponent(Inicio)
                 .addGap(15, 15, 15))
         );
@@ -93,6 +131,24 @@ public class Actualizaciones extends javax.swing.JFrame {
         inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_InicioActionPerformed
+
+    private void GeComeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeComeActionPerformed
+        ActuGeCom ActuCo=new ActuGeCom();
+        ActuCo.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_GeComeActionPerformed
+
+    private void GeLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeLogActionPerformed
+        ActuGeLog AcLog=new ActuGeLog();
+        AcLog.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_GeLogActionPerformed
+
+    private void GetiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GetiActionPerformed
+       ActuGeTi AcTi=new ActuGeTi();
+       AcTi.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_GetiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,9 +186,11 @@ public class Actualizaciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton GeCome;
+    private javax.swing.JButton GeLog;
+    private javax.swing.JButton Geti;
     private javax.swing.JButton Inicio;
-    private javax.swing.JTextArea Mos;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
     class fondoPanel extends JPanel {
 
