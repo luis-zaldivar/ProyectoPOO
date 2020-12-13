@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.VenActaGeLog;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -44,9 +45,9 @@ public class ActuGeLog extends javax.swing.JFrame {
         Tel = new javax.swing.JTextField();
         Correo = new javax.swing.JTextField();
         Expe = new javax.swing.JTextField();
-        Inicio = new javax.swing.JButton();
+        Home = new javax.swing.JButton();
         Guardar = new javax.swing.JButton();
-        Actu = new javax.swing.JButton();
+        Atras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -77,19 +78,19 @@ public class ActuGeLog extends javax.swing.JFrame {
             }
         });
 
-        Inicio.setText("Inicio");
-        Inicio.addActionListener(new java.awt.event.ActionListener() {
+        Home.setText("Inicio");
+        Home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InicioActionPerformed(evt);
+                HomeActionPerformed(evt);
             }
         });
 
         Guardar.setText("Guardar");
 
-        Actu.setText("Actualizaciones");
-        Actu.addActionListener(new java.awt.event.ActionListener() {
+        Atras.setText("Atras");
+        Atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ActuActionPerformed(evt);
+                AtrasActionPerformed(evt);
             }
         });
 
@@ -129,9 +130,9 @@ public class ActuGeLog extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(Guardar)
                         .addGap(26, 26, 26)
-                        .addComponent(Actu)
+                        .addComponent(Atras)
                         .addGap(18, 18, 18)
-                        .addComponent(Inicio)
+                        .addComponent(Home)
                         .addGap(30, 30, 30))))
         );
         layout.setVerticalGroup(
@@ -157,9 +158,9 @@ public class ActuGeLog extends javax.swing.JFrame {
                     .addComponent(Expe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Inicio)
+                    .addComponent(Home)
                     .addComponent(Guardar)
-                    .addComponent(Actu))
+                    .addComponent(Atras))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -170,17 +171,13 @@ public class ActuGeLog extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BusNomActionPerformed
 
-    private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
-        Pincipal inicio = new Pincipal();
-        inicio.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_InicioActionPerformed
+    private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
+        VenActaGeLog.BtInicio();
+    }//GEN-LAST:event_HomeActionPerformed
 
-    private void ActuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActuActionPerformed
-        Actualizaciones actu=new Actualizaciones();
-        actu.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_ActuActionPerformed
+    private void AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasActionPerformed
+        VenActaGeLog.BtAtras();
+    }//GEN-LAST:event_AtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,12 +215,12 @@ public class ActuGeLog extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Actu;
+    private javax.swing.JButton Atras;
     public javax.swing.JTextField BusNom;
     public javax.swing.JTextField Correo;
     public javax.swing.JTextField Expe;
     public javax.swing.JButton Guardar;
-    private javax.swing.JButton Inicio;
+    private javax.swing.JButton Home;
     public javax.swing.JTextField Tel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

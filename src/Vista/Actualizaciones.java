@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.VenActu;
 import Vista.Pincipal.fondoPanel;
 import com.sun.prism.paint.Color;
 import java.awt.Graphics;
@@ -44,7 +45,7 @@ public class Actualizaciones extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Inicio = new javax.swing.JButton();
+        Home = new javax.swing.JButton();
         GeCome = new javax.swing.JButton();
         Geti = new javax.swing.JButton();
         GeLog = new javax.swing.JButton();
@@ -54,10 +55,10 @@ public class Actualizaciones extends javax.swing.JFrame {
         setTitle("Actualizacion");
         setResizable(false);
 
-        Inicio.setText("Inicio");
-        Inicio.addActionListener(new java.awt.event.ActionListener() {
+        Home.setText("Inicio");
+        Home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InicioActionPerformed(evt);
+                HomeActionPerformed(evt);
             }
         });
 
@@ -92,7 +93,7 @@ public class Actualizaciones extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(317, 317, 317)
-                .addComponent(Inicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Home, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(313, 313, 313))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -119,35 +120,27 @@ public class Actualizaciones extends javax.swing.JFrame {
                     .addComponent(Geti)
                     .addComponent(GeCome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
-                .addComponent(Inicio)
+                .addComponent(Home)
                 .addGap(15, 15, 15))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
-        Pincipal inicio=new Pincipal();
-        inicio.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_InicioActionPerformed
+    private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
+        VenActu.BtInicio();
+    }//GEN-LAST:event_HomeActionPerformed
 
     private void GeComeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeComeActionPerformed
-        ActuGeCom ActuCo=new ActuGeCom();
-        ActuCo.setVisible(true);
-        this.setVisible(false);
+        VenActu.BtGecom();
     }//GEN-LAST:event_GeComeActionPerformed
 
     private void GeLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeLogActionPerformed
-        ActuGeLog AcLog=new ActuGeLog();
-        AcLog.setVisible(true);
-        this.setVisible(false);
+        VenActu.BtGeLog();
     }//GEN-LAST:event_GeLogActionPerformed
 
     private void GetiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GetiActionPerformed
-       ActuGeTi AcTi=new ActuGeTi();
-       AcTi.setVisible(true);
-       this.setVisible(false);
+       VenActu.BtGeTi();
     }//GEN-LAST:event_GetiActionPerformed
 
     /**
@@ -189,7 +182,7 @@ public class Actualizaciones extends javax.swing.JFrame {
     private javax.swing.JButton GeCome;
     private javax.swing.JButton GeLog;
     private javax.swing.JButton Geti;
-    private javax.swing.JButton Inicio;
+    private javax.swing.JButton Home;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
     class fondoPanel extends JPanel {
