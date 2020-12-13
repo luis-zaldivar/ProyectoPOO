@@ -1,15 +1,14 @@
 package miproyecto;
 
-import Interfaz.Fondo;
-
+import Vista.Fondo;
+import Controlador.*;
 /**
  * 
  * @author LuisEduardoZaldivarMiranda
  */
 public class MiProyecto {
     public static void main(String[] args) {
-        Fondo fon=new Fondo();
-        fon.setVisible(true);
+        RegistroInicio.mostrar();
     }
     
 }
