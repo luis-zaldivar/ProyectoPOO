@@ -47,7 +47,7 @@ public class RegGeTi extends javax.swing.JFrame {
         Certificaciones = new javax.swing.JTextField();
         Inicio = new javax.swing.JButton();
         Registrar = new javax.swing.JButton();
-        Registro = new javax.swing.JButton();
+        Atras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -81,10 +81,10 @@ public class RegGeTi extends javax.swing.JFrame {
 
         Registrar.setText("Registrar");
 
-        Registro.setText("Registros");
-        Registro.addActionListener(new java.awt.event.ActionListener() {
+        Atras.setText("Atras");
+        Atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroActionPerformed(evt);
+                AtrasActionPerformed(evt);
             }
         });
 
@@ -115,7 +115,7 @@ public class RegGeTi extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Registrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Registro)
+                .addComponent(Atras)
                 .addGap(21, 21, 21)
                 .addComponent(Inicio)
                 .addGap(29, 29, 29))
@@ -145,7 +145,7 @@ public class RegGeTi extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Inicio)
                     .addComponent(Registrar)
-                    .addComponent(Registro))
+                    .addComponent(Atras))
                 .addGap(23, 23, 23))
         );
 
@@ -156,11 +156,9 @@ public class RegGeTi extends javax.swing.JFrame {
         VenReGeTic.BtInicio();
     }//GEN-LAST:event_InicioActionPerformed
 
-    private void RegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroActionPerformed
-        Registros re=new Registros();
-        re.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_RegistroActionPerformed
+    private void AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasActionPerformed
+        VenReGeTic.BtAtras();
+    }//GEN-LAST:event_AtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,12 +196,12 @@ public class RegGeTi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton Atras;
     public javax.swing.JTextField Certificaciones;
     public javax.swing.JTextField Corr;
     private javax.swing.JButton Inicio;
     public javax.swing.JTextField Nom;
     public javax.swing.JButton Registrar;
-    public javax.swing.JButton Registro;
     public javax.swing.JTextField Tel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

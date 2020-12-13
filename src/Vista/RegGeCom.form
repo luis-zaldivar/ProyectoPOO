@@ -62,7 +62,7 @@
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="Registrar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="Reg" min="-2" max="-2" attributes="0"/>
+              <Component id="Atras" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="Inicio" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
@@ -98,7 +98,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Inicio" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Registrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Reg" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Atras" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
           </Group>
@@ -197,12 +197,12 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="Reg">
+    <Component class="javax.swing.JButton" name="Atras">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Registros"/>
+        <Property name="text" type="java.lang.String" value="Atras"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RegActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AtrasActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

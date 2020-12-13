@@ -47,7 +47,7 @@ public class RegGeCom extends javax.swing.JFrame {
         Corre = new javax.swing.JTextField();
         Curp = new javax.swing.JTextField();
         Registrar = new javax.swing.JButton();
-        Reg = new javax.swing.JButton();
+        Atras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -81,10 +81,10 @@ public class RegGeCom extends javax.swing.JFrame {
 
         Registrar.setText("Registrar");
 
-        Reg.setText("Registros");
-        Reg.addActionListener(new java.awt.event.ActionListener() {
+        Atras.setText("Atras");
+        Atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegActionPerformed(evt);
+                AtrasActionPerformed(evt);
             }
         });
 
@@ -121,7 +121,7 @@ public class RegGeCom extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Registrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Reg)
+                .addComponent(Atras)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Inicio)
                 .addGap(49, 49, 49))
@@ -151,7 +151,7 @@ public class RegGeCom extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Inicio)
                     .addComponent(Registrar)
-                    .addComponent(Reg))
+                    .addComponent(Atras))
                 .addGap(15, 15, 15))
         );
 
@@ -162,11 +162,9 @@ public class RegGeCom extends javax.swing.JFrame {
        VenReGeCom.BtInicio();
     }//GEN-LAST:event_InicioActionPerformed
 
-    private void RegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegActionPerformed
-        Registros re=new Registros();
-        re.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_RegActionPerformed
+    private void AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasActionPerformed
+        VenReGeCom.BtAtras();
+    }//GEN-LAST:event_AtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,11 +202,11 @@ public class RegGeCom extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton Atras;
     public javax.swing.JTextField Corre;
     public javax.swing.JTextField Curp;
     private javax.swing.JButton Inicio;
     public javax.swing.JTextField Nom;
-    public javax.swing.JButton Reg;
     public javax.swing.JButton Registrar;
     public javax.swing.JTextField Tel;
     private javax.swing.JLabel jLabel1;

@@ -26,7 +26,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="321" max="-2" attributes="0"/>
-              <Component id="Inicio" max="32767" attributes="0"/>
+              <Component id="Home" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="309" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
@@ -57,19 +57,19 @@
                   <Component id="GeTi" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="229" max="32767" attributes="0"/>
-              <Component id="Inicio" min="-2" max="-2" attributes="0"/>
+              <Component id="Home" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="Inicio">
+    <Component class="javax.swing.JButton" name="Home">
       <Properties>
         <Property name="text" type="java.lang.String" value="Inicio"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InicioActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HomeActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="GeCome">

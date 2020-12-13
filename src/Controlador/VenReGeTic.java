@@ -7,5 +7,6 @@ public class VenReGeTic {
     public static void mostrar(){ventana.setVisible(true);}
     public static void ocultar(){ventana.setVisible(false);}
     public static void BtInicio(){ocultar();Inicio.mostrarIni();}
+    public static void BtAtras(){ocultar();VenRegistros.mostrar();}
     
 }

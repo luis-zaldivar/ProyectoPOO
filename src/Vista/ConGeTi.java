@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.VenConGeTic;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -36,9 +37,9 @@ public class ConGeTi extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        Inicio = new javax.swing.JButton();
+        Home = new javax.swing.JButton();
         Imprimir = new javax.swing.JButton();
-        Consu = new javax.swing.JButton();
+        Atras = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         Mostrar = new javax.swing.JTextArea();
 
@@ -49,19 +50,19 @@ public class ConGeTi extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Consulta Gerente TI");
 
-        Inicio.setText("Inicio");
-        Inicio.addActionListener(new java.awt.event.ActionListener() {
+        Home.setText("Inicio");
+        Home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InicioActionPerformed(evt);
+                HomeActionPerformed(evt);
             }
         });
 
         Imprimir.setText("Imprimir");
 
-        Consu.setText("Consultas");
-        Consu.addActionListener(new java.awt.event.ActionListener() {
+        Atras.setText("Atras");
+        Atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConsuActionPerformed(evt);
+                AtrasActionPerformed(evt);
             }
         });
 
@@ -79,9 +80,9 @@ public class ConGeTi extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(Imprimir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Consu)
+                        .addComponent(Atras)
                         .addGap(25, 25, 25)
-                        .addComponent(Inicio)
+                        .addComponent(Home)
                         .addGap(36, 36, 36))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -100,26 +101,22 @@ public class ConGeTi extends javax.swing.JFrame {
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Inicio)
+                    .addComponent(Home)
                     .addComponent(Imprimir)
-                    .addComponent(Consu))
+                    .addComponent(Atras))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
-        Pincipal Inicio=new Pincipal();
-        Inicio.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_InicioActionPerformed
+    private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
+        VenConGeTic.BtInicio();
+    }//GEN-LAST:event_HomeActionPerformed
 
-    private void ConsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsuActionPerformed
-        Consultas consu=new Consultas();
-        consu.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_ConsuActionPerformed
+    private void AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasActionPerformed
+        VenConGeTic.BtAtras();
+    }//GEN-LAST:event_AtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,9 +154,9 @@ public class ConGeTi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton Consu;
+    public javax.swing.JButton Atras;
+    private javax.swing.JButton Home;
     public javax.swing.JButton Imprimir;
-    private javax.swing.JButton Inicio;
     public javax.swing.JTextArea Mostrar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane5;

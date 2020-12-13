@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.VenConGeCom;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -35,20 +36,20 @@ public class ConGeCom extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Inicio = new javax.swing.JButton();
+        Home = new javax.swing.JButton();
         Imprimir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        cunsu = new javax.swing.JButton();
+        Atras = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         Mostrar = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        Inicio.setText("Inicio");
-        Inicio.addActionListener(new java.awt.event.ActionListener() {
+        Home.setText("Inicio");
+        Home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InicioActionPerformed(evt);
+                HomeActionPerformed(evt);
             }
         });
 
@@ -58,10 +59,10 @@ public class ConGeCom extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Consulta Gerentes de Comunicaciones");
 
-        cunsu.setText("Consultas");
-        cunsu.addActionListener(new java.awt.event.ActionListener() {
+        Atras.setText("Atras");
+        Atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cunsuActionPerformed(evt);
+                AtrasActionPerformed(evt);
             }
         });
 
@@ -85,9 +86,9 @@ public class ConGeCom extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(Imprimir)
                         .addGap(18, 18, 18)
-                        .addComponent(cunsu)
+                        .addComponent(Atras)
                         .addGap(31, 31, 31)
-                        .addComponent(Inicio)))
+                        .addComponent(Home)))
                 .addGap(26, 26, 26))
         );
         layout.setVerticalGroup(
@@ -99,27 +100,23 @@ public class ConGeCom extends javax.swing.JFrame {
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Inicio)
+                    .addComponent(Home)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Imprimir)
-                        .addComponent(cunsu)))
+                        .addComponent(Atras)))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
-        Pincipal inicio=new Pincipal();
-        inicio.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_InicioActionPerformed
+    private void HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeActionPerformed
+        VenConGeCom.BtInicio();
+    }//GEN-LAST:event_HomeActionPerformed
 
-    private void cunsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cunsuActionPerformed
-        Consultas consu=new Consultas();
-        consu.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_cunsuActionPerformed
+    private void AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasActionPerformed
+        VenConGeCom.BtAtras();
+    }//GEN-LAST:event_AtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,10 +154,10 @@ public class ConGeCom extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton Atras;
+    private javax.swing.JButton Home;
     public javax.swing.JButton Imprimir;
-    private javax.swing.JButton Inicio;
     public javax.swing.JTextArea Mostrar;
-    public javax.swing.JButton cunsu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane5;
     // End of variables declaration//GEN-END:variables

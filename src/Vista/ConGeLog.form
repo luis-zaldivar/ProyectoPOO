@@ -28,9 +28,9 @@
               <EmptySpace max="32767" attributes="0"/>
               <Component id="Imprimir" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Component id="Consulta" min="-2" max="-2" attributes="0"/>
+              <Component id="Atras" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="Inicio" min="-2" max="-2" attributes="0"/>
+              <Component id="Home" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
@@ -57,9 +57,9 @@
               <Component id="jScrollPane5" min="-2" pref="390" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Inicio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Home" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Imprimir" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="Consulta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Atras" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -67,12 +67,12 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="Inicio">
+    <Component class="javax.swing.JButton" name="Home">
       <Properties>
         <Property name="text" type="java.lang.String" value="Inicio"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InicioActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HomeActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Imprimir">
@@ -94,12 +94,12 @@
         <Property name="text" type="java.lang.String" value="Consulta Gerente en Logistica"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="Consulta">
+    <Component class="javax.swing.JButton" name="Atras">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Consultas"/>
+        <Property name="text" type="java.lang.String" value="Atras"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AtrasActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

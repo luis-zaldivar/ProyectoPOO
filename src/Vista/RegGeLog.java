@@ -46,7 +46,7 @@ public class RegGeLog extends javax.swing.JFrame {
         Experiencia = new javax.swing.JTextField();
         Inicio = new javax.swing.JButton();
         Registrar = new javax.swing.JButton();
-        rec = new javax.swing.JButton();
+        Atras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -80,10 +80,10 @@ public class RegGeLog extends javax.swing.JFrame {
 
         Registrar.setText("Registrar");
 
-        rec.setText("Registros");
-        rec.addActionListener(new java.awt.event.ActionListener() {
+        Atras.setText("Atras");
+        Atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recActionPerformed(evt);
+                AtrasActionPerformed(evt);
             }
         });
 
@@ -114,7 +114,7 @@ public class RegGeLog extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Registrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rec)
+                .addComponent(Atras)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Inicio)
                 .addGap(28, 28, 28))
@@ -144,7 +144,7 @@ public class RegGeLog extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Inicio)
                     .addComponent(Registrar)
-                    .addComponent(rec))
+                    .addComponent(Atras))
                 .addGap(15, 15, 15))
         );
 
@@ -155,11 +155,9 @@ public class RegGeLog extends javax.swing.JFrame {
        VenRegGeLog.BtInicio();
     }//GEN-LAST:event_InicioActionPerformed
 
-    private void recActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recActionPerformed
-        Registros re=new Registros();
-        re.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_recActionPerformed
+    private void AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasActionPerformed
+        VenRegGeLog.BtAtras();
+    }//GEN-LAST:event_AtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,6 +195,7 @@ public class RegGeLog extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton Atras;
     public javax.swing.JTextField Correo;
     public javax.swing.JTextField Experiencia;
     private javax.swing.JButton Inicio;
@@ -207,7 +206,6 @@ public class RegGeLog extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    public javax.swing.JButton rec;
     public javax.swing.JTextField tel;
     // End of variables declaration//GEN-END:variables
     class fondoPanel extends JPanel {
